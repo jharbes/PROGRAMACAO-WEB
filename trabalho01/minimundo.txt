@@ -1,0 +1,49 @@
+
+
+Minimundo: 
+
+O site é um portal online para reserva de quartos em pousadas. O principal objetivo do site é proporcionar uma forma fácil e conveniente para os viajantes reservarem quartos em pousadas de diferentes localidades. 
+
+Estrutura do Site e Funcionalidades:
+
+1. **Página Inicial**: 
+   - **Barra de Pesquisa**: Os usuários podem pesquisar pousadas por localidade, data de check-in e check-out, e número de pessoas.
+   - **Listagem de Pousadas**: As pousadas populares ou recomendadas são listadas na página inicial. 
+   - **Informações de Destino**: Informações sobre destinos populares.
+
+2. **Página de Resultados da Pesquisa**:
+   - **Lista de Pousadas**: Após a pesquisa, o site lista todas as pousadas disponíveis com base nos critérios de pesquisa.
+   - **Filtros**: Os usuários podem refinar os resultados da pesquisa com base em diferentes critérios como preço, avaliação, serviços, etc.
+
+3. **Página da Pousada**:
+   - **Detalhes da Pousada**: Fotos da pousada, descrição, serviços oferecidos, avaliações de outros hóspedes.
+   - **Disponibilidade de Quartos**: Tipos de quartos disponíveis, preço, número de camas, etc.
+   - **Reserva**: Os usuários podem selecionar o tipo de quarto desejado, inserir seus detalhes e fazer a reserva.
+
+4. **Página de Reserva**:
+   - **Detalhes da Reserva**: Os usuários devem inserir seus detalhes como nome, e-mail, número de telefone, etc.
+   - **Pagamento**: Os usuários devem inserir os detalhes do pagamento para confirmar a reserva.
+
+5. **Página de Confirmação**:
+   - **Detalhes da Reserva**: Um resumo da reserva feita incluindo localização, datas, número de pessoas, tipo de quarto, preço total, etc.
+   - **Confirmação de E-mail**: Uma confirmação da reserva é enviada para o e-mail do usuário.
+
+6. **Página de Avaliação**:
+   - **Avaliação**: Após a estadia, os usuários podem avaliar a pousada e deixar um comentário.
+
+Além disso, o site também terá funcionalidades adicionais como suporte ao cliente, FAQ, políticas de cancelamento, etc. O site será otimizado para dispositivos móveis e terá uma interface amigável e fácil de usar.
+
+Dados Necessários:
+
+1. **Dados das Pousadas**: Nome, localização, descrição, fotos, preço dos quartos, serviços oferecidos, disponibilidade, etc.
+2. **Dados dos Usuários**: Nome, e-mail, número de telefone, detalhes de pagamento, histórico de reservas, etc.
+3. **Dados de Reservas**: Dados das reservas feitas pelos usuários incluindo datas, número de pessoas, tipo de quarto, preço total, status da reserva, etc.
+
+Fluxo de Trabalho Básico:
+
+1. O usuário pesquisa por pousadas na localidade desejada, inserindo as datas de check-in e check-out e o número de pessoas.
+2. O site lista todas as pousadas disponíveis com base nos critérios de pesquisa.
+3. O usuário seleciona uma pousada e é direcionado para a página da pousada onde pode ver mais detalhes e escolher um quarto.
+4. O usuário insere seus detalhes e faz a reserva.
+5. O usuário recebe uma confirmação da reserva por e-mail.
+6. Após a estadia, o usuário pode avaliar a pousada e deixar um comentário.
