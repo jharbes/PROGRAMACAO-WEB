@@ -1,0 +1,3 @@
+diagramas de caso de uso
+diagramas de classe
+paginas inicias sem banco de dados
