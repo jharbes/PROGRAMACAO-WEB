@@ -62,7 +62,8 @@ p {
 
 .menu input {
     display: block;
-  background: #ffffff;
+    width: 300px;
+  background: #f5b3b39d;
   padding: 1rem 2rem;
   border-radius: 4px;
   color: #000000;
@@ -101,14 +102,14 @@ p {
     content: "";
     width: 60px;
     height: 4px;
-    background: #e21;
+    background: #900;
     position: absolute;
     top: 30px;
     right: -30px;
 }
 
 .botao {
-  background: #e21;
+  background: #900;
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 4px;
@@ -116,7 +117,7 @@ p {
 }
 
 .botao:hover{
-    background-color: #900;
+    background-color: #e21;
 }
 
 .subtitulo {
@@ -142,12 +143,16 @@ p {
   border-left: 4px solid transparent;
 }
 
+.vantagens-item h3{
+    color: #900;
+}
+
 .vantagens-item:nth-child(odd){
     background-color: #f7f7f7;
 }
 
 .vantagens-item:hover{
-    border-left: 4px solid #e21;
+    border-left: 4px solid #900;
 }
 
 .vantagens-item p {
