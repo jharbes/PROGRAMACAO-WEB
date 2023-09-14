@@ -145,6 +145,7 @@ p {
 
 .vantagens-item h3{
     color: #900;
+    font-size: 1.4em;
 }
 
 .vantagens-item:nth-child(odd){
@@ -168,6 +169,15 @@ p {
 }
 
 @media (max-width: 800px){
+    .menu{
+        display: block;
+        text-align: center;
+    }
+
+    input{
+        text-align: center;
+    }
+    
     .conteudo {
         grid-template-columns: 1fr;
       }
