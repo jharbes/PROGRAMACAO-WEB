@@ -1,3 +1,10 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: RockSalt;
+    src: url(../fonts/RockSalt-Regular.ttf);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
@@ -40,6 +47,11 @@ p {
     display: grid;
     justify-items: center;
     gap: 60px;
+}
+
+.header h1{
+    font-family: RockSalt;
+    font-size: 3rem;
 }
 
 .menu {
@@ -95,7 +107,8 @@ p {
 }
 
 .introducao h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-family: RockSalt;
 }
 
 .introducao::before {
@@ -145,7 +158,8 @@ p {
 
 .vantagens-item h3{
     color: #900;
-    font-size: 1.4em;
+    font-size: 1em;
+    font-family: RockSalt;
 }
 
 .vantagens-item:nth-child(odd){
@@ -177,7 +191,7 @@ p {
     input{
         text-align: center;
     }
-    
+
     .conteudo {
         grid-template-columns: 1fr;
       }
