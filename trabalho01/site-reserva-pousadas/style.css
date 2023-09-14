@@ -59,6 +59,18 @@ p {
   border: 2px solid #ffffff;
 }
 
+
+.menu input {
+    display: block;
+  background: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  color: #000000;
+  text-transform: uppercase;
+  border: 2px solid #ffffff;
+}
+
+
 /* para que a borda nao "salte" quando utilizar o hover adicionamos ela no elemento em questao (sem o hover) e colocamos na mesma cor do background original */
 .menu a:hover{
     border: 2px solid #e21;
