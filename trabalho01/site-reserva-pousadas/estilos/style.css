@@ -93,7 +93,7 @@ p {
 
 /* para que a borda nao "salte" quando utilizar o hover adicionamos ela no elemento em questao (sem o hover) e colocamos na mesma cor do background original */
 .menu a:hover{
-    border: 2px solid #e21;
+    border: 2px solid rgba(238, 35, 17, 0.459);
 }
 
 .conteudo {
@@ -176,7 +176,7 @@ p {
 }
 
 .vantagens-item:hover{
-    border-left: 4px solid #900;
+    border-left: 4px solid rgba(238, 35, 17, 0.459);;
 }
 
 .vantagens-item p {
