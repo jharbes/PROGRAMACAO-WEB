@@ -65,6 +65,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  font-family: SourceCodePro, Arial, Helvetica, sans-serif;
   justify-content: center;
 }
 
@@ -72,21 +73,25 @@ p {
     display: block;
   background: #ffffff;
   padding: 1rem 2rem;
+  font-size: 1.4rem;
   border-radius: 4px;
   color: #000000;
-  text-transform: uppercase;
+  font-weight: bold;
+  /* text-transform: uppercase; */
   border: 2px solid #ffffff;
 }
 
 
 .menu input {
     display: block;
-    width: 300px;
+    width: 350px;
   background: #f5b3b39d;
+  font-family: SourceCodePro, Arial, Helvetica, sans-serif;
   padding: 1rem 2rem;
+  font-size: 1.4rem;
   border-radius: 4px;
   color: #000000;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   border: 2px solid #ffffff;
 }
 
@@ -114,7 +119,7 @@ p {
 }
 
 .introducao h1{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: RockSalt;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637);
 }
