@@ -58,7 +58,8 @@ p {
 .header h1{
     font-family: RockSalt, Arial, Helvetica, sans-serif;
     font-size: 3rem;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.637);
 }
 
 .menu {
@@ -120,8 +121,9 @@ p {
 
 .introducao h1{
     font-size: 1.7rem;
+    font-weight: bold;
     font-family: RockSalt;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637);
+    /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637); */
 }
 
 .introducao::before {
@@ -171,9 +173,10 @@ p {
 
 .vantagens-item h3{
     color: #900;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
     font-family: RockSalt;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637);
+    /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637); */
 }
 
 .vantagens-item:nth-child(odd){
