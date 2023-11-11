@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: RockSalt;
+    src: url(../fonts/RockSalt-Regular.ttf);
+}
+
+@font-face {
+    font-family: SourceCodePro;
+    src: url(../fonts/SourceCodePro-VariableFont_wght.ttf);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  background: #f7f7f7;
+  display: grid;
+  gap: 60px;
+  justify-items: center;
+  margin-top: 60px;
+}
+
+div#imagens img {
+  max-width: 100%;
+  display: block;
+  align-self: center;
+  height: 360px;
+} 
+
+div#banner {
+    max-width: 100%;
+    display: block;
+    align-self: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px; /* retirando as margens setadas automaticamente no ul */
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-family: SourceCodePro, Arial, Helvetica, sans-serif;
+}
+
+.header{
+    display: grid;
+    justify-items: center;
+    gap: 60px;
+}
+
+.header h1{
+    font-family: RockSalt, Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.637);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: SourceCodePro, Arial, Helvetica, sans-serif;
+  justify-content: center;
+}
+
+.menu a {
+    display: block;
+  background: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  color: #000000;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  border: 2px solid #ffffff;
+}
+
+
+.menu input {
+    display: block;
+    width: 360px;
+  background: #f5b3b39d;
+  font-family: SourceCodePro, Arial, Helvetica, sans-serif;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  color: #000000;
+  /* text-transform: uppercase; */
+  border: 2px solid #ffffff;
+}
+
+
+/* para que a borda nao "salte" quando utilizar o hover adicionamos ela no elemento em questao (sem o hover) e colocamos na mesma cor do background original */
+.menu a:hover{
+    border: 2px solid rgba(238, 35, 17, 0.459);
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+}
+
+.introducao {
+  background: #fff;
+  padding: 40px;
+  text-align: right;
+  position: relative;
+  display: grid;
+  gap: 20px;
+  align-content: center;
+  justify-items: end;
+}
+
+.introducao h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: RockSalt;
+    /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637); */
+}
+
+.introducao::before {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #900;
+    position: absolute;
+    top: 30px;
+    right: -30px;
+}
+
+.carousel-caption{
+    text-shadow: 5px 5px 20px black;
+    background-color: #00000042;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.botao {
+  background: #900;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.botao:hover{
+    background-color: #e21;
+    color: #fff;
+}
+
+.subtitulo {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.2);
+  text-align: right;
+  padding: 40px;
+  align-self: center;
+  background-image: url(img/onda.svg);
+}
+
+.vantagens {
+  background: #fff;
+  padding: 40px;
+}
+
+.vantagens-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 20px;
+  padding: 20px;
+  border-left: 4px solid transparent;
+}
+
+.vantagens-item h3{
+    color: #900;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: RockSalt;
+    /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.637); */
+}
+
+.vantagens-item:nth-child(odd){
+    background-color: #f7f7f7;
+}
+
+.vantagens-item:hover{
+    border-left: 4px solid rgba(238, 35, 17, 0.459);;
+}
+
+.vantagens-item p {
+  grid-column: 2;
+}
+
+.rodape {
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px){
+    .header h1{
+        font-size: 2rem;
+    }
+    .menu{
+        display: block;
+        text-align: center;
+    }
+
+    input{
+        text-align: center;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+      }
+
+    .introducao::before {
+        display: none;
+    }
+
+    .subtitulo {
+        text-align: center;
+      }
+}
+
+@media (max-width: 500px){
+    .subtitulo{
+        font-size: 1rem;
+    }
+}

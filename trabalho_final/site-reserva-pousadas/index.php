@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilos/style.css">
+    <title>Pousadas On Line</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<body>
+    <header class="header">
+        <h1>Pousadas On Line</h1>
+
+        <nav aria-label="primaria">
+            <ul class="menu">
+                <li><input type="text" name="busca" id="busca" placeholder="Busque aqui sua pousada..."></li>
+                <li><a href="#">Listagem de Pousadas</a></li>
+                <li><a href="#">Informações de Destinos</a></li>
+                <li><a href="#">Suporte ao Cliente</a></li>
+                <li><a href="#">Login/Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <main>
+    <article class="conteudo">
+        <div class="introducao" aria-labelledby="label-introducao">
+
+          <h1 id="label-introducao">As Melhores Pousadas!</h1><br>
+          <p>Bem-vindo ao nosso site de reservas de pousadas online, onde a tranquilidade encontra a conveniência digital. <br><br>Aqui, nós facilitamos sua jornada de descanso desde o primeiro clique, oferecendo uma seleção vasta e cuidadosamente curada de pousadas aconchegantes para sua escolha.</p><br>
+          <a class="botao" href="/">Ver Mais</a>
+        </div>
+        <!-- <img src="./img/resort_praia.jpg" alt="Resort proximo a praia"> -->
+        <div id="banner" class="carousel slide" data-bs-ride="carousel">
+            <div id="indicadores" class="carousel-indicators">
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="4"></button>
+            </div>
+        
+    
+            <div id="imagens" class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/resort_praia.jpg" alt="imagens" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h2>Pousada Recanto</h2>
+                        <p>Búzios - RJ</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/pousada_campo.jpg" alt="imagens" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h2>Pousada Sonho Azul</h2>
+                        <p>Jericoacara - CE</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/pousada_piscina.jpg" alt="imagens" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h2>Hotel Vale Verde</h2>
+                        <p>Ilhabela - SP</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/pousada_praia.jpg" alt="imagens" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h2>Hotel Salinas</h2>
+                        <p>Arraial do Cabo - RJ</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/pousada_serra.jpg" alt="imagens" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h2>Hotel Saint Moritz</h2>
+                        <p>Teresópolis - RJ</p>
+                    </div>
+                </div>
+            </div>
+    
+            <button type="button" class="carousel-control-prev" data-bs-target="#banner" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button type="button" class="carousel-control-next" data-bs-target="#banner" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+    
+        </div>
+    </article>
+
+    <article class="conteudo" aria-labelledby="label-vantagens">
+        <h2 class="subtitulo" id="label-vantagens">Vantagens Pousadas On Line</h2>
+        <ul class="vantagens">
+          <li class="vantagens-item">
+            <img src="./img/icons8-security-64.png" alt="" width="30">
+            <h3>Praticidade e Segurança</h3>
+            <p>Nosso sistema de reservas seguro permite que você reserve seu quarto preferido com apenas alguns passos simples.</p>
+          </li>
+          <li class="vantagens-item">
+            <img src="./img/icons8-satisfaction-66.png" alt="" width="30">
+            <h3>Prezamos pela Satisfação do Cliente</h3>
+            <p>Após a estadia, incentivamos os hóspedes a compartilhar suas experiências através de avaliações, contribuindo para uma comunidade transparente e colaborativa.</p>
+          </li>
+          <li class="vantagens-item">
+            <img src="./img/icons8-floating-island-beach-64.png" alt="" width="30">
+            <h3>Venha Conosco!</h3>
+            <p>Descubra sua próxima estadia perfeita conosco e explore o mundo de conforto e hospitalidade que espera por você!</p>
+          </li>
+        </ul>
+    </article>
+  </main>
+
+  <footer class="rodape">
+    <p>Pousadas On Line. Alguns Direitos Reservados.</p>
+  </footer>
+</body>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script> -->
+    
+
+</html>
