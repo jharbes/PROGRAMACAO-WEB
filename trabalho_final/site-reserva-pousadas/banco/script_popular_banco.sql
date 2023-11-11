@@ -48,8 +48,8 @@ INSERT INTO Avaliacao (id, nota, comentario, fk_idusuario, fk_idpousada) VALUES
 
 -- Populando a tabela Pagamento
 INSERT INTO Pagamento (id, tipo, valor, data, status, codigo_barras, numero_cartao, validade_cartao, cvv, nome_titular, chave_pix, fk_idreserva) VALUES
-(1, 'cartão de crédito', 400.00, '2023-01-15', 'pago', NULL, '1111222233334444', '12/2025', '123', 'João Silva', NULL, 1),
+(1, 'cartao_credito', 400.00, '2023-01-15', 'pago', NULL, '1111222233334444', '12/2025', '123', 'João Silva', NULL, 1),
 (2, 'boleto', 150.00, '2023-02-10', 'pendente', '123456789101112', NULL, NULL, NULL, NULL, NULL, 2),
 (3, 'PIX', 500.00, '2023-03-05', 'pago', NULL, NULL, NULL, NULL, NULL, '123.456.789-00', 3),
-(4, 'cartão de débito', 360.00, '2023-04-20', 'pago', NULL, '4444333322221111', '11/2024', '321', 'Ana Santos', NULL, 4),
-(5, 'cartão de crédito', 600.00, '2023-05-15', 'pago', NULL, '5555666677778888', '10/2023', '456', 'Pedro Costa', NULL, 5);
+(4, 'cartao_debito', 360.00, '2023-04-20', 'pago', NULL, '4444333322221111', '11/2024', '321', 'Ana Santos', NULL, 4),
+(5, 'cartao_credito', 600.00, '2023-05-15', 'pago', NULL, '5555666677778888', '10/2023', '456', 'Pedro Costa', NULL, 5);

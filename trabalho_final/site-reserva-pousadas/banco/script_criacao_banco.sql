@@ -55,7 +55,7 @@ CREATE TABLE Reserva (
 
 CREATE TABLE Pagamento (
     id int PRIMARY KEY,
-    tipo enum('solteiro','casal'),
+    tipo enum('cartao_credito','cartao_debito','boleto','PIX'),
     valor float(10,2),
     data date,
     status enum('pendente','confirmado'),
