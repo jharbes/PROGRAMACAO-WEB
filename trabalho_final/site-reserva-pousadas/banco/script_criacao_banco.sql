@@ -65,45 +65,33 @@ CREATE TABLE Pagamento (
 );
  
 ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_2
-    FOREIGN KEY (fk_Usuario_id)
+    FOREIGN KEY (fk_idusuario)
     REFERENCES Usuario (id)
     ON DELETE CASCADE;
  
 ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_3
-    FOREIGN KEY (fk_Pousada_id)
+    FOREIGN KEY (fk_idpousada)
     REFERENCES Pousada (id)
     ON DELETE CASCADE;
  
-ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_4
-    FOREIGN KEY (fk_idusuario???, fk_idpousada???)
-    REFERENCES ??? (???);
- 
 ALTER TABLE FuncionarioPousada ADD CONSTRAINT FK_FuncionarioPousada_2
-    FOREIGN KEY (fk_Pousada_id)
+    FOREIGN KEY (fk_idpousada)
     REFERENCES Pousada (id)
     ON DELETE RESTRICT;
- 
-ALTER TABLE FuncionarioPousada ADD CONSTRAINT FK_FuncionarioPousada_3
-    FOREIGN KEY (fk_idpousada???)
-    REFERENCES ??? (???);
  
 ALTER TABLE Quarto ADD CONSTRAINT FK_Quarto_2
-    FOREIGN KEY (fk_Pousada_id)
+    FOREIGN KEY (fk_idpousada)
     REFERENCES Pousada (id)
     ON DELETE RESTRICT;
  
-ALTER TABLE Quarto ADD CONSTRAINT FK_Quarto_3
-    FOREIGN KEY (fk_idpousada???)
-    REFERENCES ??? (???);
- 
 ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_2
-    FOREIGN KEY (fk_idusuario, fk_idquarto???, fk_idpagamento???)
-    REFERENCES Usuario (id, ???, ???);
+    FOREIGN KEY (fk_idusuario)
+    REFERENCES Usuario (id);
  
 ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_3
-    FOREIGN KEY (fk_Quarto_id, fk_Quarto_fk_idpousada???)
-    REFERENCES Quarto (id, ???);
+    FOREIGN KEY (fk_idquarto)
+    REFERENCES Quarto (id);
  
 ALTER TABLE Pagamento ADD CONSTRAINT FK_Pagamento_2
-    FOREIGN KEY (fk_idreserva???)
-    REFERENCES ??? (???);
+    FOREIGN KEY (fk_idreserva)
+    REFERENCES Reserva (id);
