@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS `pousadas_online` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `pousadas_online`;
+
+
 /* diagrama_entidade_relacionamento_logico: */
 
 CREATE TABLE Usuario (
