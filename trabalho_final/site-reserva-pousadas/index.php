@@ -18,7 +18,7 @@
                 <li><a href="#">Listagem de Pousadas</a></li>
                 <li><a href="#">Informações de Destinos</a></li>
                 <li><a href="#">Suporte ao Cliente</a></li>
-                <li><a href="#">Login/Registro</a></li>
+                <li><a href="user-login.php">Login/Registro</a></li>
             </ul>
         </nav>
     </header>
