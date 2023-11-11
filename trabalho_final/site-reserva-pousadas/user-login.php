@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./estilos/style.css">
     <title>Pousadas On Line</title>
 </head>
+<?php
+require_once 'includes/banco.php';
+require_once 'includes/funcoes.php';
+require_once 'includes/login.php';
+?>
 <body>
     <header class="header">
         <h1>Pousadas On Line</h1>
@@ -24,11 +29,7 @@
     </header>
 
   <main>
-  <?php
-require_once 'includes/banco.php';
-require_once 'includes/funcoes.php';
-require_once 'includes/login.php';
-?>
+
 <div id="corpo">
     <?php
         $u=$_POST['usuario']??null;
