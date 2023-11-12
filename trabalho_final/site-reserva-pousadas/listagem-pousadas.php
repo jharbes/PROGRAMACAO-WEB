@@ -15,12 +15,12 @@ require_once 'includes/login.php';
 ?>
 <body>
     <header class="header">
-        <h1>Pousadas On Line</h1>
+        <h1><a href="index.php">Pousadas On Line</a></h1>
 
         <nav aria-label="primaria">
             <ul class="menu">
                 <li><input type="text" name="busca" id="busca" placeholder="Busque aqui sua pousada..."></li>
-                <li><a href="#">Listagem de Pousadas</a></li>
+                <li><a href="listagem-pousadas.php">Listagem de Pousadas</a></li>
                 <li><a href="#">Informações de Destinos</a></li>
                 <li><a href="#">Suporte ao Cliente</a></li>
                 <li><a href="user-login.php">Login/Registro</a></li>
@@ -63,7 +63,7 @@ require_once 'includes/login.php';
                     while($reg=$busca->fetch_object()){
                         $t=thumb($reg->foto);
                         echo "<tr><td><img src='$t' class='mini2'/>";
-                        echo "<td><a href='#?cod=$reg->id'>$reg->nome</a>";
+                        echo "<td><a href='detalhes.php?cod=$reg->id'>$reg->nome</a>";
                         echo "<br>$reg->localizacao";
                         echo "<br>$reg->descricao";
                         if (isAdmin()){

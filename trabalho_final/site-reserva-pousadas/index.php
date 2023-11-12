@@ -15,7 +15,7 @@ require_once 'includes/login.php';
 ?>
 <body>
     <header class="header">
-        <h1>Pousadas On Line</h1>
+        <h1><a href="index.php">Pousadas On Line</a></h1>
 
         <nav aria-label="primaria">
             <ul class="menu">

@@ -15,15 +15,15 @@ require_once 'includes/login.php';
 ?>
 <body>
     <header class="header">
-        <h1>Pousadas On Line</h1>
+        <h1><a href="index.php">Pousadas On Line</a></h1>
 
         <nav aria-label="primaria">
             <ul class="menu">
                 <li><input type="text" name="busca" id="busca" placeholder="Busque aqui sua pousada..."></li>
-                <li><a href="#">Listagem de Pousadas</a></li>
+                <li><a href="listagem-pousadas.php">Listagem de Pousadas</a></li>
                 <li><a href="#">Informações de Destinos</a></li>
                 <li><a href="#">Suporte ao Cliente</a></li>
-                <li><a href="#">Login/Registro</a></li>
+                <li><a href="user-login.php">Login/Registro</a></li>
             </ul>
         </nav>
     </header>

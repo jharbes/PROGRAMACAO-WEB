@@ -15,12 +15,12 @@ require_once 'includes/login.php';
 ?>
 <body>
     <header class="header">
-        <h1>Pousadas On Line</h1>
+        <h1><a href="index.php">Pousadas On Line</a></h1>
 
         <nav aria-label="primaria">
             <ul class="menu">
                 <li><input type="text" name="busca" id="busca" placeholder="Busque aqui sua pousada..."></li>
-                <li><a href="#">Listagem de Pousadas</a></li>
+                <li><a href="listagem-pousadas.php">Listagem de Pousadas</a></li>
                 <li><a href="#">Informações de Destinos</a></li>
                 <li><a href="#">Suporte ao Cliente</a></li>
                 <li><a href="user-login.php">Login/Registro</a></li>
@@ -30,10 +30,39 @@ require_once 'includes/login.php';
 
 <main>
 
+    <?php
+        $c=$_GET["cod"]??0;
+        $busca=$banco->query("select * from pousada where id='$c'");
+    ?>
 
-
-
-
+    <table class="detalhes">
+        <?php
+        if (!$busca)
+            echo "<tr><td>Busca falhou! $banco->error</tr></td>";
+        else{
+            if ($busca->num_rows==1){
+                $reg=$busca->fetch_object();
+                // Não colocar a função thumb() direto na tag img, nao vai funcionar.
+                $t=thumb($reg->foto);
+                echo "<tr><td rowspan='3'><img src='$t' class='full2'/></td></tr>";
+                echo "<td><h2>$reg->nome</h2>";
+                echo "Nota: ".number_format($reg->nota,1)."/10.0";
+                if (isAdmin()){
+                    echo "  <span class='material-symbols-outlined'>add</span> ";
+                    echo "<span class='material-symbols-outlined'>edit</span> ";
+                    echo "<span class='material-symbols-outlined'>delete</span>";
+                }
+                else if (isEditor())
+                    echo "  <span class='material-symbols-outlined'>edit</span>";
+                echo "<tr><td style='text-align: justify;'>$reg->descricao</td></tr>";
+                echo "<tr><td>Adm</td></tr>";
+            }
+            else{
+                echo "<tr><td>Nenhum registro encontrado</tr></td>";
+            }
+        }
+        ?>
+    </table>
 
 </main>
 
