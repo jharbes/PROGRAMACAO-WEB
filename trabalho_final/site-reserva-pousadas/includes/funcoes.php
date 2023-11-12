@@ -1,6 +1,6 @@
 <?php
     function thumb($arq){
-        $caminho="fotos/$arq";
+        $caminho=$arq;
         if (is_null($arq) || !file_exists($caminho))
             return "fotos/indisponivel.png";
         else

@@ -1,6 +1,6 @@
 <?php
 
-$banco=new mysqli("localhost","root","","bd_games");
+$banco=new mysqli("localhost","root","","pousadas_online");
 if ($banco->connect_errno){
     echo "<h2>Encontrei um erro $banco->errno --> $banco->connect_error</h2>";
     die();

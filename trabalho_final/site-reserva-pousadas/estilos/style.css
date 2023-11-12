@@ -245,3 +245,42 @@ p {
         font-size: 1rem;
     }
 }
+
+
+
+img.mini2{
+    width: 200px;
+}
+img.full2{
+    height: 800px;
+}
+table.listagem{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+table.listagem tr{
+    height: 50px;
+}
+table.listagem td{
+    /* border: 1px solid #ddd;*/
+    padding: 10px;
+}
+table.listagem tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+table.listagem td:nth-child(1){
+    width: 70px;
+}
+table.listagem td:nth-child(3){
+    width: 110px;
+    text-align: right;
+}
+table.detalhes{
+    width: 100%;
+}
+table.detalhes td{
+    padding: 10px;
+    /* original vertical align top */
+    vertical-align: center;
+}
