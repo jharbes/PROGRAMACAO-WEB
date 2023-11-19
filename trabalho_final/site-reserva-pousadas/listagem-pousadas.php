@@ -9,13 +9,13 @@
     <title>Pousadas On Line</title>
 </head>
 <?php
-include_once 'topo.php';
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
 $chave=$_GET['c']??"";
 ?>
 <body>
+<?php include 'topo.php';?>
     <header class="header">
         <h1><a href="index.php">Pousadas On Line</a></h1>
 
@@ -78,7 +78,7 @@ $chave=$_GET['c']??"";
                             echo "<span class='material-symbols-outlined'>edit</span> ";
                             echo "<span class='material-symbols-outlined'>delete</span>";
                         }
-                        else if (isEditor())
+                        else if (isCliente())
                             echo "<td><span class='material-symbols-outlined'>edit</span>";
                     }
                 }

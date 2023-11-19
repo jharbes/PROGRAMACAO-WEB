@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['user'])){
     $_SESSION['user']="";
     $_SESSION['nome']="";
-    // $_SESSION['tipo']="";
+    $_SESSION['tipo']="";
 }
 
 function cripto($senha){
@@ -51,11 +51,11 @@ function isAdmin(){
         return false;
 }
 
-function isEditor(){
+function isCliente(){
     $t=$_SESSION['tipo']??null;
     if (is_null($t))
         return false;
-    else if ($t=='editor')
+    else if ($t=='cliente')
         return true;
     else
         return false;

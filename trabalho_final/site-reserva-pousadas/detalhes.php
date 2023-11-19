@@ -9,12 +9,12 @@
     <title>Pousadas On Line</title>
 </head>
 <?php
-include_once 'topo.php';
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
 ?>
 <body>
+<?php include 'topo.php';?>
     <header class="header">
         <h1><a href="index.php">Pousadas On Line</a></h1>
 
@@ -61,7 +61,7 @@ require_once 'includes/login.php';
                     echo "<span class='material-symbols-outlined'>edit</span> ";
                     echo "<span class='material-symbols-outlined'>delete</span>";
                 }
-                else if (isEditor())
+                else if (isCliente())
                     echo "  <span class='material-symbols-outlined'>edit</span>";
                 echo "<tr><td style='text-align: justify;'>$reg->descricao</td></tr>";
                 // echo "<tr><td>Adm</td></tr>";
