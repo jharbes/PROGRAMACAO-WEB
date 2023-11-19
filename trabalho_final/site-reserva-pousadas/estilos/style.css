@@ -292,6 +292,7 @@ table.listagem td:nth-child(3){
 }
 table.detalhes{
     width: 100%;
+    font-family: SourceCodePro, Arial, Helvetica, sans-serif;
 }
 table.detalhes td{
     padding: 10px;
@@ -322,4 +323,46 @@ table.comentario{
     font-family: SourceCodePro, Arial, Helvetica, sans-serif;
     margin: 20px;
     font-weight: 600;
+}
+
+
+
+form .inclui_comentario {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+form .inclui_comentario label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form .inclui_comentario input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+form .inclui_comentario button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form .inclui_comentario button:hover {
+    background-color: #003d82;
 }

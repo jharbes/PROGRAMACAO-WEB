@@ -12,6 +12,7 @@
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
+$user_email=$_SESSION['user'];
 ?>
 <body>
 <?php include 'topo.php';?>
@@ -38,7 +39,7 @@ require_once 'includes/login.php';
     <?php
         $c=$_GET["cod"]??0;
         $busca=$banco->query("select pousada.*, avg(avaliacao.nota) as media from pousada left join avaliacao on pousada.id=avaliacao.fk_idpousada where pousada.id='$c'");
-        $avaliacoes=$banco->query("SELECT avaliacao.*, usuario.nome
+        $avaliacoes=$banco->query("SELECT avaliacao.*, usuario.id,usuario.nome
         FROM avaliacao 
         JOIN usuario ON avaliacao.fk_idusuario = usuario.id 
         WHERE fk_idpousada = '$c';")
@@ -62,7 +63,7 @@ require_once 'includes/login.php';
                     echo "<span class='material-symbols-outlined'>delete</span>";
                 }
                 else if (isCliente())
-                    echo "  <span class='material-symbols-outlined'>edit</span>";
+                    echo "  <span class='material-symbols-outlined'></span>";
                 echo "<tr><td style='text-align: justify;'>$reg->descricao</td></tr>";
                 // echo "<tr><td>Adm</td></tr>";
             }
@@ -89,6 +90,33 @@ require_once 'includes/login.php';
         }
         ?>
     </table>
+    <br>
+    <h2>Incluir nova Avaliação:</h2>
+    <br>
+    <?php
+    // Verifica se o usuário está logado
+    if (isset($_SESSION['user'])) {
+        // Supondo que você tenha o ID da pousada de alguma forma (talvez passado via GET)
+        $busca_id=$banco->query("select * from usuario where email='$user_email';");
+        $reg2=$busca_id->fetch_object();
+        $usuarioLogadoId=$reg2->id;
+        $pousadaId = $c;
+        ?>
+        <form class="inclui_comentario" action="processa_comentario.php" method="post">
+            <input type="hidden" name="usuario_id" value="<?php echo htmlspecialchars($usuarioLogadoId); ?>">
+            <input type="hidden" name="pousada_id" value="<?php echo htmlspecialchars($pousadaId); ?>">
+            <label for="nota">Nota:</label>
+            <input type="number" name="nota" id="nota" step="0.1" min="0" max="5">
+            <br><br>
+            <label for="comentario">Comentário:</label>
+            <textarea name="comentario" id="comentario"></textarea>
+            <button type="submit">Enviar Comentário</button>
+        </form>
+    <?php
+} else {
+    echo "Usuário não está logado.";
+}
+?>
 
 </main>
 
