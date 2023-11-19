@@ -9,6 +9,7 @@
     <title>Pousadas On Line</title>
 </head>
 <?php
+include_once 'topo.php';
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
@@ -68,7 +69,7 @@ $chave=$_GET['c']??"";
                     while($reg=$busca->fetch_object()){
                         $t=thumb($reg->foto);
                         echo "<tr><td><img src='$t' class='mini2'/>";
-                        echo "<td><a href='detalhes.php?cod=$reg->id'>$reg->nome</a>";
+                        echo "<td><a href='detalhes.php?cod=$reg->id'><strong>$reg->nome</strong></a>";
                         echo "<br>$reg->localizacao";
                         echo "<br>$reg->descricao";
                         if (isAdmin()){

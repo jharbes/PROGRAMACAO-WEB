@@ -9,6 +9,7 @@
     <title>Pousadas On Line</title>
 </head>
 <?php
+include_once 'topo.php';
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
@@ -42,7 +43,7 @@ require_once 'includes/login.php';
         if (is_null($u) || is_null($s))
             require 'user-login-form.php';
         else{
-            $q="SELECT usuario, nome, senha, tipo FROM usuarios WHERE usuario = '$u' LIMIT 1";
+            $q="SELECT nome, email, senha FROM usuario WHERE email = '$u' LIMIT 1";
             $busca=$banco->query($q);
             if (!$busca){
                 echo msgErro('Falha ao acessar o banco!');
@@ -50,11 +51,11 @@ require_once 'includes/login.php';
             else{
                 if ($busca->num_rows>0){
                     $reg=$busca->fetch_object();
-                    if (testarHash($s,$reg->senha)){
+                    if ($s == $reg->senha){
                         echo msgSucesso("Logado com sucesso!");
-                        $_SESSION['user']=$reg->usuario;
+                        $_SESSION['user']=$reg->email;
                         $_SESSION['nome']=$reg->nome;
-                        $_SESSION['tipo']=$reg->tipo;
+                        // $_SESSION['tipo']=$reg->tipo;
                     }
                     else
                         echo msgErro("Senha Inválida!");

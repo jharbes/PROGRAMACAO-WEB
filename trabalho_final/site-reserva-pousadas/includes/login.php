@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['user'])){
     $_SESSION['user']="";
     $_SESSION['nome']="";
-    $_SESSION['tipo']="";
+    // $_SESSION['tipo']="";
 }
 
 function cripto($senha){

@@ -9,6 +9,7 @@
     <title>Pousadas On Line</title>
 </head>
 <?php
+include_once 'topo.php';
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
@@ -53,7 +54,7 @@ require_once 'includes/login.php';
                 // Não colocar a função thumb() direto na tag img, nao vai funcionar.
                 $t=thumb($reg->foto);
                 echo "<tr><td rowspan='3'><img src='$t' class='full2'/></td></tr>";
-                echo "<td><h2>$reg->nome</h2>";
+                echo "<td><h2><strong>$reg->nome</strong></h2>";
                 echo "Nota: ".number_format($reg->media,1)."/5.0";
                 if (isAdmin()){
                     echo "  <span class='material-symbols-outlined'>add</span> ";
