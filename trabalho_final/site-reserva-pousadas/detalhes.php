@@ -78,9 +78,9 @@ require_once 'includes/login.php';
         else{
             if ($avaliacoes->num_rows>=1){
                 while($reg=$avaliacoes->fetch_object()){
-                    echo "<tr><td>Nome do Avaliador: " . htmlspecialchars($reg->nome) . "</td></tr>";
+                    echo "<table class='comentario'><tr><td>Nome do Avaliador: " . htmlspecialchars($reg->nome) . "</td></tr>";
                     echo "<tr><td>Comentário: " . htmlspecialchars($reg->comentario) . "</td></tr>";
-                    echo "<tr><td>Nota: " . htmlspecialchars($reg->nota) . "</td></tr>";
+                    echo "<tr><td>Nota: " . htmlspecialchars($reg->nota) . "</td></tr></table>";
                 }
             } else{
                 echo "<tr><td>Nenhuma avaliação encontrada.</td></tr>";

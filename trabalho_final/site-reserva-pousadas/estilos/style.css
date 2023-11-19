@@ -314,3 +314,12 @@ h2#h2_avaliacoes{
     padding: 20px;
     font-family: RockSalt, Arial, Helvetica, sans-serif;
 }
+
+table.comentario{
+    border: 1px solid rgba(0, 0, 0, 0.144);
+    padding: 20px;
+    width: 100%;
+    font-family: SourceCodePro, Arial, Helvetica, sans-serif;
+    margin: 20px;
+    font-weight: 600;
+}
