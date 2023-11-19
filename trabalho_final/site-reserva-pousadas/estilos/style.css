@@ -298,3 +298,19 @@ table.detalhes td{
     /* original vertical align top */
     vertical-align: center;
 }
+
+
+table.avaliacoes{
+    /* margin: 0 auto; */
+    justify-content: center;
+}
+table.avaliacoes td{
+    padding: 10px;
+    /* original vertical align top */
+    vertical-align: center;
+}
+
+h2#h2_avaliacoes{
+    padding: 20px;
+    font-family: RockSalt, Arial, Helvetica, sans-serif;
+}

@@ -39,7 +39,7 @@ $chave=$_GET['c']??"";
 
           <h1 id="label-introducao">As Melhores Pousadas!</h1><br>
           <p>Bem-vindo ao nosso site de reservas de pousadas online, onde a tranquilidade encontra a conveniência digital. <br><br>Aqui, nós facilitamos sua jornada de descanso desde o primeiro clique, oferecendo uma seleção vasta e cuidadosamente curada de pousadas aconchegantes para sua escolha.</p><br>
-          <a class="botao" href="/">Ver Mais</a>
+          <a class="botao" href="listagem-pousadas.php">Ver Mais</a>
         </div>
         <!-- <img src="./img/resort_praia.jpg" alt="Resort proximo a praia"> -->
         <div id="banner" class="carousel slide" data-bs-ride="carousel">

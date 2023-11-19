@@ -37,6 +37,10 @@ require_once 'includes/login.php';
     <?php
         $c=$_GET["cod"]??0;
         $busca=$banco->query("select * from pousada where id='$c'");
+        $avaliacoes=$banco->query("SELECT avaliacao.*, usuario.nome 
+        FROM avaliacao 
+        JOIN usuario ON avaliacao.fk_idusuario = usuario.id 
+        WHERE fk_idpousada = '$c';")
     ?>
 
     <table class="detalhes">
@@ -59,10 +63,27 @@ require_once 'includes/login.php';
                 else if (isEditor())
                     echo "  <span class='material-symbols-outlined'>edit</span>";
                 echo "<tr><td style='text-align: justify;'>$reg->descricao</td></tr>";
-                echo "<tr><td>Adm</td></tr>";
+                // echo "<tr><td>Adm</td></tr>";
             }
             else{
                 echo "<tr><td>Nenhum registro encontrado</tr></td>";
+            }
+        }
+    echo "</table><br>";
+    echo "<h2 id='h2_avaliacoes'>Avaliações da Pousada: </h2><br>";
+    echo "<table class='avaliacoes'>";
+    
+        if (!$avaliacoes)
+            echo "<tr><td>Busca por avaliações falhou! $banco->error</tr></td>";
+        else{
+            if ($avaliacoes->num_rows>=1){
+                while($reg=$avaliacoes->fetch_object()){
+                    echo "<tr><td>Nome do Avaliador: " . htmlspecialchars($reg->nome) . "</td></tr>";
+                    echo "<tr><td>Comentário: " . htmlspecialchars($reg->comentario) . "</td></tr>";
+                    echo "<tr><td>Nota: " . htmlspecialchars($reg->nota) . "</td></tr>";
+                }
+            } else{
+                echo "<tr><td>Nenhuma avaliação encontrada.</td></tr>";
             }
         }
         ?>
