@@ -36,8 +36,8 @@ require_once 'includes/login.php';
 
     <?php
         $c=$_GET["cod"]??0;
-        $busca=$banco->query("select * from pousada where id='$c'");
-        $avaliacoes=$banco->query("SELECT avaliacao.*, usuario.nome 
+        $busca=$banco->query("select pousada.*, avg(avaliacao.nota) as media from pousada left join avaliacao on pousada.id=avaliacao.fk_idpousada where pousada.id='$c'");
+        $avaliacoes=$banco->query("SELECT avaliacao.*, usuario.nome
         FROM avaliacao 
         JOIN usuario ON avaliacao.fk_idusuario = usuario.id 
         WHERE fk_idpousada = '$c';")
@@ -54,7 +54,7 @@ require_once 'includes/login.php';
                 $t=thumb($reg->foto);
                 echo "<tr><td rowspan='3'><img src='$t' class='full2'/></td></tr>";
                 echo "<td><h2>$reg->nome</h2>";
-                echo "Nota: ".number_format($reg->nota,1)."/10.0";
+                echo "Nota: ".number_format($reg->media,1)."/5.0";
                 if (isAdmin()){
                     echo "  <span class='material-symbols-outlined'>add</span> ";
                     echo "<span class='material-symbols-outlined'>edit</span> ";
