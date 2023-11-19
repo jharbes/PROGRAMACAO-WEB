@@ -107,6 +107,9 @@ p {
   border: 2px solid #ffffff;
 }
 
+.menu input #botaook{
+    display: none;
+}
 
 /* para que a borda nao "salte" quando utilizar o hover adicionamos ela no elemento em questao (sem o hover) e colocamos na mesma cor do background original */
 .menu a:hover{

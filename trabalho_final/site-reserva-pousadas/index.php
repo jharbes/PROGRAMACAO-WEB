@@ -12,6 +12,7 @@
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
+$chave=$_GET['c']??"";
 ?>
 <body>
     <header class="header">
@@ -19,7 +20,10 @@ require_once 'includes/login.php';
 
         <nav aria-label="primaria">
             <ul class="menu">
-                <li><input type="text" name="busca" id="busca" placeholder="Busque aqui sua pousada..."></li>
+                <form action="listagem-pousadas.php" method="get">
+                    <li><input type="text" name="c" id="ibusca" placeholder="Busque aqui sua pousada..." size="10" maxlength="40"></li>
+                    <li><input id="botaook" type="submit" value="OK" width='50'></li>
+                </form>
                 <li><a href="listagem-pousadas.php">Listagem de Pousadas</a></li>
                 <li><a href="#">Informações de Destinos</a></li>
                 <li><a href="#">Suporte ao Cliente</a></li>

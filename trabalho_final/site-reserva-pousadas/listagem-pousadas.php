@@ -12,6 +12,7 @@
 require_once 'includes/banco.php';
 require_once 'includes/funcoes.php';
 require_once 'includes/login.php';
+$chave=$_GET['c']??"";
 ?>
 <body>
     <header class="header">
@@ -34,10 +35,10 @@ require_once 'includes/login.php';
         /*
             $q="select * from jogos j join generos g on j.genero=g.cod";
         */
-            $q="select * from pousada;";
+            $q="select * from pousada";
 
             if (!empty($chave)){
-                $q.="where j.nome like '%$chave%' or p.produtora like '%$chave%' or g.genero like '%$chave%' ";
+                $q.=" where nome like '%$chave%' or localizacao like '%$chave%' or descricao like '%$chave%' ";
             }
 
             // switch ($ordem){
