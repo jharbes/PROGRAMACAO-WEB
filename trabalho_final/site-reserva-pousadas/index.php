@@ -21,8 +21,9 @@ $chave=$_GET['c']??"";
         <nav aria-label="primaria">
             <ul class="menu">
                 <form action="listagem-pousadas.php" method="get">
-                    <li><input type="text" name="c" id="ibusca" placeholder="Busque aqui sua pousada..." size="10" maxlength="40"></li>
-                    <li><input id="botaook" type="submit" value="OK" width='50'></li>
+                    <li class="search-bar"><input type="text" name="c" id="ibusca" placeholder="Busque aqui sua pousada..." size="10" maxlength="40"></li>
+                    <li>
+                    <input id="botaook" type="submit" value="OK" width='50'></li>
                 </form>
                 <li><a href="listagem-pousadas.php">Listagem de Pousadas</a></li>
                 <li><a href="#">Informações de Destinos</a></li>

@@ -107,8 +107,15 @@ p {
   border: 2px solid #ffffff;
 }
 
-.menu input #botaook{
-    display: none;
+.menu .search-bar {
+    display: flex; /* Faz com que os elementos dentro do li fiquem lado a lado */
+    flex-wrap: nowrap;
+    gap: 10px; /* Espaço entre os elementos */
+}
+
+#botaook{
+    position: absolute;
+    left: -9999px;
 }
 
 /* para que a borda nao "salte" quando utilizar o hover adicionamos ela no elemento em questao (sem o hover) e colocamos na mesma cor do background original */
