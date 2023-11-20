@@ -71,26 +71,72 @@ $user_email=$_SESSION['user'];
                 echo "<tr><td>Nenhum registro encontrado</tr></td>";
             }
         }
-    echo "</table><br>";
-    echo "<h2 id='h2_avaliacoes'>Avaliações da Pousada: </h2><br>";
-    echo "<table class='avaliacoes'>";
-    
-        if (!$avaliacoes)
-            echo "<tr><td>Busca por avaliações falhou! $banco->error</tr></td>";
-        else{
-            if ($avaliacoes->num_rows>=1){
-                while($reg=$avaliacoes->fetch_object()){
-                    echo "<table class='comentario'><tr><td>Nome do Avaliador: " . htmlspecialchars($reg->nome) . "</td></tr>";
-                    echo "<tr><td>Comentário: " . htmlspecialchars($reg->comentario) . "</td></tr>";
-                    echo "<tr><td>Nota: " . htmlspecialchars($reg->nota) . "</td></tr></table>";
-                }
-            } else{
-                echo "<tr><td>Nenhuma avaliação encontrada.</td></tr>";
-            }
+        echo "</table><br>";
+
+
+
+
+        // Mostrando a lista de quartos disponiveis
+
+        $idPousada=$c;
+
+        $consulta = $banco->prepare("SELECT id, numero, tipo, disponibilidade, preco_noite FROM quarto WHERE fk_idpousada = ? ORDER BY numero DESC");
+        if (!$consulta) {
+            echo "Erro ao preparar consulta: " . $banco->error;
+            exit;
         }
+
+        $consulta->bind_param("i", $idPousada);
+        $consulta->execute();
+
+        $resultado = $consulta->get_result();
+
+        if ($resultado->num_rows > 0) {
+            echo "<table>";
+            echo "<tr><th>Número do Quarto</th><th>Disponibilidade</th><th>Preço por Noite</th><th>Tipo</th><th>Reserva</th></tr>";
+            while ($quarto = $resultado->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $quarto['numero'] . "</td>";
+                echo "<td>" . ($quarto['disponibilidade'] ? 'Disponível' : 'Indisponível') . "</td>";
+                echo "<td>R$ " . number_format($quarto['preco_noite'], 2, ',', '.') . "</td>";
+                echo "<td>" . $quarto['tipo'] . "</td>";
+                echo "<td><a href='efetuar-reserva.php?idQuarto=" . $quarto['id'] . "'>Reservar</a></td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "Nenhum quarto disponível.";
+        }
+
+
+
+        
+
+        // Mostrando a lista de avaliações
+
+        echo "<h2 id='h2_avaliacoes'>Avaliações da Pousada: </h2><br>";
+        echo "<table class='avaliacoes'>";
+        
+            if (!$avaliacoes)
+                echo "<tr><td>Busca por avaliações falhou! $banco->error</tr></td>";
+            else{
+                if ($avaliacoes->num_rows>=1){
+                    while($reg=$avaliacoes->fetch_object()){
+                        echo "<table class='comentario'><tr><td>Nome do Avaliador: " . htmlspecialchars($reg->nome) . "</td></tr>";
+                        echo "<tr><td>Comentário: " . htmlspecialchars($reg->comentario) . "</td></tr>";
+                        echo "<tr><td>Nota: " . htmlspecialchars($reg->nota) . "</td></tr></table>";
+                    }
+                } else{
+                    echo "<tr><td>Nenhuma avaliação encontrada.</td></tr>";
+                }
+            }
         ?>
     </table>
     
+
+    
+    <!-- Incluindo avaliações SE o usuario estiver logado -->
+
     <?php
     // Verifica se o usuário está logado
     if (!empty($_SESSION['user'])) {
@@ -114,9 +160,9 @@ $user_email=$_SESSION['user'];
             <button type="submit">Enviar Comentário</button>
         </form>';
     
-} else {
-    echo "Usuário deve estar logado para fazer avaliações.";
-}
+    } else {
+        echo "Usuário deve estar logado para fazer avaliações.";
+    }
 ?>
 
 </main>
