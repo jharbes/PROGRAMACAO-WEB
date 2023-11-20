@@ -303,17 +303,20 @@ table.detalhes td{
 
 table.avaliacoes{
     /* margin: 0 auto; */
-    justify-content: center;
+    /* justify-content: center; */
 }
 table.avaliacoes td{
     padding: 10px;
     /* original vertical align top */
-    vertical-align: center;
+    /* vertical-align: center; */
+
 }
 
 h2#h2_avaliacoes{
     padding: 20px;
+    margin-top: 50px;
     font-family: RockSalt, Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 table.comentario{
@@ -323,6 +326,7 @@ table.comentario{
     font-family: SourceCodePro, Arial, Helvetica, sans-serif;
     margin: 20px;
     font-weight: 600;
+    text-align: left !important;
 }
 
 
@@ -365,4 +369,30 @@ form .inclui_comentario button {
 
 form .inclui_comentario button:hover {
     background-color: #003d82;
+}
+
+table.reserva {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgba(238, 35, 17, 0.459);
+}
+
+table.reserva th, td {
+    border: 1px solid #00000042;
+    padding: 8px;
+    text-align: center;
+}
+
+table.reserva th {
+    background-color: #00000042;
+    color: white;
+}
+
+table.reserva td a {
+    color: white;
+    text-decoration: none;
+}
+
+table.reserva td a:hover {
+    text-decoration: underline;
 }

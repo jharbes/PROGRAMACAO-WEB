@@ -92,7 +92,7 @@ $user_email=$_SESSION['user'];
         $resultado = $consulta->get_result();
 
         if ($resultado->num_rows > 0) {
-            echo "<table>";
+            echo "<table class='reserva'>";
             echo "<tr><th>Número do Quarto</th><th>Disponibilidade</th><th>Preço por Noite</th><th>Tipo</th><th>Reserva</th></tr>";
             while ($quarto = $resultado->fetch_assoc()) {
                 echo "<tr>";
@@ -100,13 +100,19 @@ $user_email=$_SESSION['user'];
                 echo "<td>" . ($quarto['disponibilidade'] ? 'Disponível' : 'Indisponível') . "</td>";
                 echo "<td>R$ " . number_format($quarto['preco_noite'], 2, ',', '.') . "</td>";
                 echo "<td>" . $quarto['tipo'] . "</td>";
-                echo "<td><a href='efetuar-reserva.php?idQuarto=" . $quarto['id'] . "'>Reservar</a></td>";
+                // Verificação para a coluna Reserva
+                if ($quarto['disponibilidade']) {
+                    echo "<td><a href='efetuar-reserva.php?id=" . $quarto['numero'] . "'>Reservar</a></td>";
+                } else {
+                    echo "<td>Indisponível</td>";
+                }
                 echo "</tr>";
             }
             echo "</table>";
         } else {
             echo "Nenhum quarto disponível.";
-        }
+            }
+        
 
 
 
