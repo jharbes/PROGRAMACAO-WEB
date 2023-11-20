@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
     <title>Pousadas On Line</title>
 </head>
 <?php
@@ -61,10 +62,10 @@ $chave=$_GET['c']??"";
             // }
             $busca=$banco->query($q);
             if (!$busca)
-                echo "<tr><td>Infelizmente a busca deu erro!</tr></td>";
+                echo msgErro("Infelizmente a busca deu erro!");
             else{
                 if ($busca->num_rows==0)
-                    echo "<tr><td>Nenhum registro encontrado!</tr></td>";
+                    echo msgAviso("Nenhum registro encontrado!");
                 else{
                     while($reg=$busca->fetch_object()){
                         $t=thumb($reg->foto);
@@ -78,8 +79,7 @@ $chave=$_GET['c']??"";
                             echo "<span class='material-symbols-outlined'>edit</span> ";
                             echo "<span class='material-symbols-outlined'>delete</span>";
                         }
-                        else if (isCliente())
-                            echo "<td><span class='material-symbols-outlined'>edit</span>";
+                        
                     }
                 }
             }

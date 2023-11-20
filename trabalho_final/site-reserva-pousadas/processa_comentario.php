@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
     <title>Pousadas On Line</title>
 </head>
 <?php
@@ -55,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        echo "Comentário adicionado com sucesso!";
+        echo msgSucesso("Comentário adicionado com sucesso!");
     } else {
-        echo "Erro ao adicionar comentário: " . $banco->error;
+        echo msgErro("Erro ao adicionar comentário: " . $banco->error);
     }
 }
 ?>

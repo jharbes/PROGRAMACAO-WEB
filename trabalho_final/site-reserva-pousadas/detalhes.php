@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
     <title>Pousadas On Line</title>
 </head>
 <?php
@@ -34,7 +35,7 @@ $user_email=$_SESSION['user'];
         </nav>
     </header>
 
-<main>
+<main class="container">
 
     <?php
         $c=$_GET["cod"]??0;
@@ -45,12 +46,13 @@ $user_email=$_SESSION['user'];
         WHERE fk_idpousada = '$c';")
     ?>
 
-    <table class="detalhes">
+    
         <?php
         if (!$busca)
-            echo "<tr><td>Busca falhou! $banco->error</tr></td>";
+            echo msgErro("Busca falhou! $banco->error");
         else{
             if ($busca->num_rows==1){
+                echo '<table class="detalhes">';
                 $reg=$busca->fetch_object();
                 // Não colocar a função thumb() direto na tag img, nao vai funcionar.
                 $t=thumb($reg->foto);
@@ -63,16 +65,19 @@ $user_email=$_SESSION['user'];
                     echo "<span class='material-symbols-outlined'>edit</span> ";
                     echo "<span class='material-symbols-outlined'>delete</span>";
                 }
+                
                 else if (isCliente())
                     echo "  <span class='material-symbols-outlined'></span>";
                 echo "<tr><td style='text-align: justify;'>$reg->descricao</td></tr>";
                 // echo "<tr><td>Adm</td></tr>";
+                echo "</table><br>";
             }
             else{
-                echo "<tr><td>Nenhum registro encontrado</tr></td>";
+                echo msgAviso("Nenhum registro encontrado");
             }
         }
-        echo "</table><br>";
+
+        
 
 
 
@@ -81,9 +86,9 @@ $user_email=$_SESSION['user'];
 
         $idPousada=$c;
 
-        $consulta = $banco->prepare("SELECT id, numero, tipo, disponibilidade, preco_noite FROM quarto WHERE fk_idpousada = ? ORDER BY numero DESC");
+        $consulta = $banco->prepare("SELECT id, numero, tipo, disponibilidade, preco_noite FROM quarto WHERE fk_idpousada = ? ORDER BY preco_noite");
         if (!$consulta) {
-            echo "Erro ao preparar consulta: " . $banco->error;
+            echo msgErro("Erro ao preparar consulta: " . $banco->error);
             exit;
         }
 
@@ -111,7 +116,7 @@ $user_email=$_SESSION['user'];
             }
             echo "</table>";
         } else {
-            echo "Nenhum quarto disponível.";
+            echo msgAviso("Nenhum quarto disponível.");
             }
         
 
@@ -122,23 +127,26 @@ $user_email=$_SESSION['user'];
         // Mostrando a lista de avaliações
 
         echo "<h2 id='h2_avaliacoes'>Avaliações da Pousada: </h2><br>";
-        echo "<table class='avaliacoes'>";
+        
         
             if (!$avaliacoes)
-                echo "<tr><td>Busca por avaliações falhou! $banco->error</tr></td>";
+                echo msgErro("Busca por avaliações falhou!". $banco->error);
             else{
                 if ($avaliacoes->num_rows>=1){
+                    echo "<ul class='avaliacoes table'>";
                     while($reg=$avaliacoes->fetch_object()){
-                        echo "<table class='comentario'><tr><td>Nome do Avaliador: " . htmlspecialchars($reg->nome) . "</td></tr>";
-                        echo "<tr><td>Comentário: " . htmlspecialchars($reg->comentario) . "</td></tr>";
-                        echo "<tr><td>Nota: " . htmlspecialchars($reg->nota) . "</td></tr></table>";
+                        echo "<li>Nome do Avaliador: " . htmlspecialchars($reg->nome);
+                        echo "<br>Comentário: " . htmlspecialchars($reg->comentario);
+                        echo "<br>Nota: " . htmlspecialchars($reg->nota)."</li>";
+                        
                     }
+                    echo "</ul>";
                 } else{
-                    echo "<tr><td>Nenhuma avaliação encontrada.</td></tr>";
+                    echo msgAviso("Nenhuma avaliação encontrada.");
                 }
+
             }
         ?>
-    </table>
     
 
     
@@ -168,7 +176,7 @@ $user_email=$_SESSION['user'];
         </form>';
     
     } else {
-        echo "Usuário deve estar logado para fazer avaliações.";
+        echo msgAviso("<strong>Usuário deve estar logado para fazer avaliações.</strong>");
     }
 ?>
 
