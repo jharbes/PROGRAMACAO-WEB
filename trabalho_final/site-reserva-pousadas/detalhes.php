@@ -115,7 +115,7 @@ $user_email=$_SESSION['user'];
         </form>';
     
 } else {
-    echo "Usuário não está logado.";
+    echo "Usuário deve estar logado para fazer avaliações.";
 }
 ?>
 
