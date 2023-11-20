@@ -56,7 +56,7 @@ $user_email=$_SESSION['user'];
                 echo msgAviso("Senha antiga foi mantida!");
             else if ($senha1===$senha2){
                 // $senha=gerarHash($senha1);
-                $q.=", senha='$senha'";
+                $q.=", senha='$senha1'";
             }
             else
                 echo msgErro("Senhas não conferem, a senha anterior será mantida.");
