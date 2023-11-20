@@ -50,7 +50,7 @@ $user_email=$_SESSION['user'];
             $senha1=$_POST['senha1']??null;
             $senha2=$_POST['senha2']??null;
 
-            $q="UPDATE usuarios SET email='$usuario', nome='$nome'";
+            $q="UPDATE usuario SET email='$usuario', nome='$nome'";
 
             if (empty($senha1) || is_null($senha1))
                 echo msgAviso("Senha antiga foi mantida!");
