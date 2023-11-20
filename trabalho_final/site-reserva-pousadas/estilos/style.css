@@ -301,10 +301,10 @@ table.detalhes td{
 }
 
 
-table.avaliacoes{
-    /* margin: 0 auto; */
-    /* justify-content: center; */
-}
+/* table.avaliacoes{
+    margin: 0 auto; 
+    justify-content: center; 
+} */
 table.avaliacoes td{
     padding: 10px;
     /* original vertical align top */
@@ -364,7 +364,7 @@ form .inclui_comentario button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 form .inclui_comentario button:hover {
@@ -381,6 +381,7 @@ table.reserva th, td {
     border: 1px solid #00000042;
     padding: 8px;
     text-align: center;
+    font-weight: 600;
 }
 
 table.reserva th {
