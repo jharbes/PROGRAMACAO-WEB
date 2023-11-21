@@ -42,6 +42,7 @@ require_once 'includes/login.php';
 
 <div id="corpo">
     <?php
+    if (empty($_SESSION['user'])) {
         $u=$_POST['usuario']??null;
         $s=$_POST['senha']??null;
 
@@ -68,12 +69,12 @@ require_once 'includes/login.php';
                     echo msgErro("Usuário não encontrado!");
             }
         }
-        
+        echo "<br><div><a href='user-new.php'>CADASTRAR-SE COMO USUÁRIO</a></div>";
+    }else
+        echo msgAviso("<strong>Usuário já está logado!</strong>"); 
     ?>
 </div>
 
-<br>
-<div><a href="user-new.php">CADASTRAR-SE COMO USUÁRIO</a></div>
 <br><div><a href="index.php">VOLTAR</a></div>
 
   </main>
