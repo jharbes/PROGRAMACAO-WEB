@@ -69,7 +69,6 @@ $user_email=$_SESSION['user'];
                 else if (isCliente())
                     echo "  <span class='material-symbols-outlined'></span>";
                 echo "<tr><td style='text-align: justify;'>$reg->descricao</td></tr>";
-                // echo "<tr><td>Adm</td></tr>";
                 echo "</table><br>";
             }
             else{
