@@ -1,4 +1,5 @@
-<h2><strong>LOGIN</strong></h2>
+<h2><strong style="color: #900; font-family: RockSalt; font-size: 1.5rem;">Login</strong></h2>
+<br>
 <form action="user-login.php" method="post">
     <table>
         <tr><td><label for="usuario">E-mail: </label></td><td><input type="text" name="usuario" id="usuario" size="30" maxlength="40" required></td></tr>

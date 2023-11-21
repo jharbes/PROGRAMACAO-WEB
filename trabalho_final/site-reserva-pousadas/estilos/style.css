@@ -297,8 +297,8 @@ form .inclui_comentario {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 70%;
+    max-width: 700px;
+    width: 100%;
 }
 
 form .inclui_comentario label {
@@ -309,12 +309,13 @@ form .inclui_comentario label {
 }
 
 form .inclui_comentario input[type="text"], textarea, select {
-    width: 70%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    height: 200px;
 }
 
 form .inclui_comentario button {

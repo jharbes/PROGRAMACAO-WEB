@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./estilos/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
     <title>Pousadas On Line</title>
+    <style>
+        main{
+            text-align: center;
+        }
+    </style>
 </head>
 <?php
 require_once 'includes/banco.php';
@@ -39,9 +44,7 @@ $user_email=$_SESSION['user'];
 
 <div id="corpo">
 <?php
-    if (!isAdmin())
-        echo msgErro("Área Restrita: Você não é Administrador!");
-    else{
+
         if (!isset($_POST['usuario']))
             require 'user-new-form.php';
         else{
@@ -49,15 +52,15 @@ $user_email=$_SESSION['user'];
             $nome=$_POST['nome']??null;
             $senha1=$_POST['senha1']??null;
             $senha2=$_POST['senha2']??null;
-            $tipo=$_POST['tipo']??null;
+            $tipo="cliente";
 
             if ($senha1===$senha2){
-                if (empty($usuario || empty($nome) || empty($senha1) || empty($senha2) || empty($tipo))){
+                if (empty($usuario || empty($nome) || empty($senha1) || empty($senha2))){
                     echo msgErro("Todos os dados são obrigatórios!");
                 }
                 else
-                    $senha=gerarHash($senha1);
-                    $q="INSERT INTO usuarios (usuario,nome,senha,tipo) VALUES ('$usuario','$nome','$senha','$tipo')";
+                    $senha=$senha1;
+                    $q="INSERT INTO usuario (email,nome,senha,tipo) VALUES ('$usuario','$nome','$senha','$tipo')";
                     if ($banco->query($q))
                         echo msgSucesso("Usuário $usuario cadastrado com sucesso!");
                     else
@@ -66,9 +69,8 @@ $user_email=$_SESSION['user'];
             else
                 echo msgErro("Senhas não conferem, repita o procedimento!");
         }
-    }
 
-    echo voltar();
+    echo "<br>".voltar();
 ?>
 </div>
 

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./estilos/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
     <title>Pousadas On Line</title>
+    <style>
+        img{
+            max-width: 600px;
+        }
+    </style>
 </head>
 <?php
 require_once 'includes/banco.php';
@@ -147,7 +152,7 @@ $user_email=$_SESSION['user'];
             }
         ?>
     
-
+    </main>
     
     <!-- Incluindo avaliações SE o usuario estiver logado -->
 
@@ -156,20 +161,19 @@ $user_email=$_SESSION['user'];
     if (!empty($_SESSION['user'])) {
         echo "<br>";
         echo "<h2>Incluir nova Avaliação:</h2>";
-        echo "<br>";
         // Supondo que você tenha o ID da pousada de alguma forma (talvez passado via GET)
         $busca_id=$banco->query("select * from usuario where email='$user_email';");
         $reg2=$busca_id->fetch_object();
         $usuarioLogadoId=$reg2->id;
         $pousadaId = $c;
         
-        echo '<form class="inclui_comentario" action="processa_comentario.php" method="post">';
+        echo '<form class="inclui_comentario" style="text-align: center;" action="processa_comentario.php" method="post">';
             echo '<input type="hidden" name="usuario_id" value="<?php echo htmlspecialchars($usuarioLogadoId); ?>">';
             echo '<input type="hidden" name="pousada_id" value="';?><?php echo htmlspecialchars($pousadaId); ?><?php echo '">
             <label for="nota">Nota:</label>
             <input type="number" name="nota" id="nota" step="0.1" min="0" max="5">
             <br><br>
-            <label for="comentario">Comentário:</label>
+            <label for="comentario">Comentário:</label><br>
             <textarea name="comentario" id="comentario"></textarea>
             <button type="submit">Enviar Comentário</button>
         </form>';
@@ -179,7 +183,7 @@ $user_email=$_SESSION['user'];
     }
 ?>
 
-</main>
+
 
 <footer class="rodape">
   <p>Pousadas On Line. Alguns Direitos Reservados.</p>
