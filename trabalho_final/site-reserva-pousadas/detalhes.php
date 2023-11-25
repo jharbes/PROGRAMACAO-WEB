@@ -46,7 +46,11 @@ $user_email=$_SESSION['user'];
 
     <?php
         $c=$_GET["cod"]??0;
-        $busca=$banco->query("select pousada.*, avg(avaliacao.nota) as media from pousada left join avaliacao on pousada.id=avaliacao.fk_idpousada where pousada.id='$c'");
+
+        // query dos dados da pousada e média das avaliações da pousada
+        $busca=$banco->query("SELECT pousada.*, avg(avaliacao.nota) AS media FROM pousada LEFT JOIN avaliacao ON pousada.id=avaliacao.fk_idpousada WHERE pousada.id='$c'");
+
+        // query dos dados das avaliações da pousada
         $avaliacoes=$banco->query("SELECT avaliacao.*, usuario.id,usuario.nome
         FROM avaliacao 
         JOIN usuario ON avaliacao.fk_idusuario = usuario.id 
