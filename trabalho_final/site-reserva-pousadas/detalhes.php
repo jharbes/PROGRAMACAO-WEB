@@ -40,7 +40,9 @@ $user_email=$_SESSION['user'];
         </nav>
     </header>
 
+
 <main class="container">
+
 
     <?php
         $c=$_GET["cod"]??0;
